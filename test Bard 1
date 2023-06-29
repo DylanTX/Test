@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Crossword Puzzle</title>
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+  border: 1px solid black;
+  padding: 5px;
+}
+th {
+  text-align: center;
+}
+input {
+  width: 100%;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<th>Across</th>
+<th>Down</th>
+</tr>
+<tr>
+<td>1. A type of bird that crows. (5)</td>
+<td>2. The sound that a rooster makes. (4)</td>
+</tr>
+<tr>
+<td>4. The time of day when roosters typically crow. (4)</td>
+<td>3. A type of animal that roosters often fight. (4)</td>
+</tr>
+<tr>
+<td>6. A feeling of excitement or anticipation. (8)</td>
+<td>5. The color of the sky at dawn. (4)</td>
+</tr>
+<tr>
+<td>8. A type of bird that is often mistaken for a rooster. (4)</td>
+<td>7. A type of bird that is often kept as a pet. (6)</td>
+</tr>
+</table>
+<input type="text" id="answer1" placeholder="Answer for 1">
+<input type="text" id="answer2" placeholder="Answer for 2">
+<input type="text" id="answer3" placeholder="Answer for 3">
+<input type="text" id="answer4" placeholder="Answer for 4">
+<input type="text" id="answer5" placeholder="Answer for 5">
+<input type="text" id="answer6" placeholder="Answer for 6">
+<input type="text" id="answer7" placeholder="Answer for 7">
+<input type="text" id="answer8" placeholder="Answer for 8">
+<button onclick="checkAnswers()">Check Answers</button>
+<script>
+function checkAnswers() {
+  var answers = {
+    "1": document.getElementById("answer1").value,
+    "2": document.getElementById("answer2").value,
+    "3": document.getElementById("answer3").value,
+    "4": document.getElementById("answer4").value,
+    "5": document.getElementById("answer5").value,
+    "6": document.getElementById("answer6").value,
+    "7": document.getElementById("answer7").value,
+    "8": document.getElementById("answer8").value
+  };
+
+  var correct = true;
+  for (var answer in answers) {
+    if (answers[answer] !== "" && answers[answer] !== document.getElementById(answer).innerHTML) {
+      correct = false;
+      break;
+    }
+  }
+
+  if (correct) {
+    alert("You got all the answers correct!");
+  } else {
+    alert("You got some of the answers incorrect.");
+  }
+}
+</script>
+</body>
+</html>
